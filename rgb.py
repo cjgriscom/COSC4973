@@ -67,17 +67,19 @@ ledB.start(0)
 try:
     while 1:
         interpolate(ledR, ledG, ledB, 100, 0, 0)
+        interpolate(ledR, ledG, ledB, 100, 100, 0)
         interpolate(ledR, ledG, ledB, 0, 100, 0)
+        interpolate(ledR, ledG, ledB, 0, 100, 100)
         interpolate(ledR, ledG, ledB, 0, 0, 100)
         interpolate(ledR, ledG, ledB, 100, 0, 100)
-        interpolate(ledR, ledG, ledB, 100, 100, 0)
-        interpolate(ledR, ledG, ledB, 0, 100, 100)
 
 except KeyboardInterrupt:
     pass
-p.stop()
-GPIO.cleanup()
+ledR.stop()
+ledG.stop()
+ledB.stop()
 
+GPIO.cleanup()
 
 print('\n-- End of program --')
 
