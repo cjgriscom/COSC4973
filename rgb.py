@@ -38,7 +38,7 @@ def interpolate(ledR, ledG, ledB, R, G, B):
        ledR.ChangeDutyCycle(oldR*(100-dc)/100. + R*dc/100)
        ledG.ChangeDutyCycle(oldG*(100-dc)/100. + G*dc/100)
        ledB.ChangeDutyCycle(oldB*(100-dc)/100. + B*dc/100)
-       time.sleep(0.02)
+       time.sleep(0.08)
     oldR = R
     oldG = G
     oldB = B

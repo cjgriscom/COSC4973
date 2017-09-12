@@ -1,0 +1,8 @@
+redbluegreenmauvefuscia
+
+Formatted text:
+	red is the color
+	blue is the color
+	green is the color
+	mauve is the color
+	fuscia is the color

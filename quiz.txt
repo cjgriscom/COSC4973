@@ -1,0 +1,18 @@
+BIOS - Basic i/o system
+MBR - Master Boot Record
+GRUB - Grand Unified BootLoader
+KERNEL - not an abbreviation... Guts
+--
+Stages of bootup
+1. BIOS/uefi
+2. bootloader
+3. kernel
+4. Init (Upstart on Pi)
+--
+Core boot tasks
+Plymouth, mountall, network, GDM
+--
+BIOS Phase - Begins by executing firmware.  Permanant memory/ROM. 
+Bootloader - HDD or CD/Flash based boot
+Kernel - Provides access to hardware and other services. Launches initrd scripts
+System Startup - start Init, rc scripts

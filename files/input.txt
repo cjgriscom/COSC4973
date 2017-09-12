@@ -1,0 +1,14 @@
+What is vimrc?
+The vimrc file contains optional runtime configuration settings to initialize Vim when it starts. On Unix based systems, the file is named .vimrc, while on Windows systems it is named _vimrc. :help vimrc
+
+You can customize Vim by putting suitable commands in your vimrc. Here is a very simple example:
+
+" Always wrap long lines:
+set wrap
+Lines that begin with " are comments and are not read by vim.
+
+Search for file vimrc_example.vim in your Vim files for another example. :help vimrc-intro :help vimrc_example.vim
+
+To customize Vim for editing a specific file, or a specific type of file, you can use modelines, or auto commands, or filetype plugins. :help auto-setting :help filetype
+
+
