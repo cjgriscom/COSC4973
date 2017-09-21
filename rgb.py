@@ -30,7 +30,7 @@ oldB = 0
 # define functions 
 
 
-def interpolate(ledR, ledG, ledB, R, G, B):
+def interpolate(pauseTime, ledR, ledG, ledB, R, G, B):
     global oldR
     global oldG
     global oldB
@@ -38,7 +38,7 @@ def interpolate(ledR, ledG, ledB, R, G, B):
        ledR.ChangeDutyCycle(oldR*(100-dc)/100. + R*dc/100)
        ledG.ChangeDutyCycle(oldG*(100-dc)/100. + G*dc/100)
        ledB.ChangeDutyCycle(oldB*(100-dc)/100. + B*dc/100)
-       time.sleep(0.08)
+       time.sleep(pauseTime)
     oldR = R
     oldG = G
     oldB = B
@@ -64,14 +64,17 @@ ledG.start(0)
 ledB = GPIO.PWM(LED_blue, 144)
 ledB.start(0)
 
+sinTime = 0
+
 try:
     while 1:
-        interpolate(ledR, ledG, ledB, 100, 0, 0)
-        interpolate(ledR, ledG, ledB, 100, 100, 0)
-        interpolate(ledR, ledG, ledB, 0, 100, 0)
-        interpolate(ledR, ledG, ledB, 0, 100, 100)
-        interpolate(ledR, ledG, ledB, 0, 0, 100)
-        interpolate(ledR, ledG, ledB, 100, 0, 100)
+        pauseT = 0.08
+        interpolate(pauseT, ledR, ledG, ledB, 100, 0, 0)
+        interpolate(pauseT, ledR, ledG, ledB, 100, 100, 0)
+        interpolate(pauseT, ledR, ledG, ledB, 0, 100, 0)
+        interpolate(pauseT, ledR, ledG, ledB, 0, 100, 100)
+        interpolate(pauseT, ledR, ledG, ledB, 0, 0, 100)
+        interpolate(pauseT, ledR, ledG, ledB, 100, 0, 100)
 
 except KeyboardInterrupt:
     pass
