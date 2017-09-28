@@ -16,7 +16,7 @@ class SimpleApplication(Frame):
     
     def __init__(self):
         Frame.__init__(self)
-	self.pack() # Really pack it in good
+	self.pack()
         self.slider = Scale(self, {"from":0,
 	                           "to":100,
 				   "orient":"horizontal",
@@ -27,10 +27,10 @@ class SimpleApplication(Frame):
         self.done = Button(self, {"text":"Quit",
 	                          "fg":"red",
 				  "command":self.quit})
-	self.slider.pack({"side":"top"}) # Pack it in REAL good
+	self.slider.pack({"side":"top"})
         
-	self.reset.pack({"side":"top", "fill":"both"}) # Pack it in REAL good
-	self.done.pack({"side":"top", "fill":"both"}) # Pack it in REAL good
+	self.reset.pack({"side":"top", "fill":"both"})
+	self.done.pack({"side":"top", "fill":"both"})
 	#Almopst doen
 
 app = SimpleApplication()

@@ -1,0 +1,44 @@
+Project Specs
+
+Python/Pi/GUI/Programming on canvas
+
+
+Must use Tkinter
+
+GUI must be designed to be expandable if necessary
+
+2nd order ordinary diff eq with graph
+Overdamped/underdamped/critical in parallel & series ****
+Transistor / tube amp modeling
+Op Amp configurations
+
+
+555
+LM317
+Linear RRE solver
+
+
+Must be reviewed by 2 other people
+5 Minute talk
+5-10 page report
+
+
+Reqs doc 
+
+*Tell me what you're gonna do
+*Trying to convince management
+*One page
+* Not too many details
+
+
+**** A week from today is job fair
+**** Send email with reqs doc on THURSDAY 
+
+
+Specifications Doc
+
+*Toolbase - Python, Tkinter, what math libraries
+*GUI mockups with descriptions of each tab
+*Details of each dependency
+*Details of each button
+*Error handling
