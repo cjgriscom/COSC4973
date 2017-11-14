@@ -1,0 +1,61 @@
+Newton's Laws
+
+sum of F = m*u"
+mu" + ku = 0
+
+Best way to solve the 2nd order ode is to break it down into two first order
+d2u/dt2 + (k/m) * u = 0
+du/dt = v    ---->    dv/dt=d2u/dv2
+
+Rewrite as:::
+
+du/dt = v(t)
+dv/dt + (k/m) * u = 0
+
+^^^^^ Two first order
+
+
+Then we need to discretize them, otherwise means nothing to the computer
+
+Taylor Series
+f(x+^x) = f(x)
+^^ Poor estimate
+
+f(x+^x) = f(x) + (^x)/(1!) * f'(x)
+^^ Add derivative term
+
+f(x+^x) = f(x) + (^x)/(1!) * f'(x) + (^x)^2/(2!) * f''(x) + (^x)^3/(3!) * f'''(x)
+^^ More terms
+
+
+
+
+f'(x) = (f(x+^x)-f(x)) / (^x)      <--- Just first order; this is def of derivative if you add a limit as ^x -> 0
+
+Then we must subtract out all the 2nd...Nth derivative terms
+
+2.    - (^x)^2/(2!) * f''(x) / (^x)
+3.    - (^x)^3/(3!) * f'''(x) / (^x)
+
+Term 2 is on the order of ^x (divide out limit-style)   : 0(^x)
+Term 3 is on the order of ^x^2 (divide out limit-style) : 0(^x^2)
+
+
+Now fill out original equations:
+
+u(t+^t) - u(t)
+-------------- = V(t)
+      ^t
+
+v(t+^t) - v(t)
+-------------- = -(k/m)*u
+      ^t
+
+My new u(t+^t) = ^t * v(t) + u(t)
+       v(t+^t) = -(^t)*(k/m)*u(t) + v(t)
+
+^^ Iterative equations!!!
+
+Init conditions
+u(0) = 0
+u'(0) = 0
